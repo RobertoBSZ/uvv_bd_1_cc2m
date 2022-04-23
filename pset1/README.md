@@ -1,7 +1,7 @@
 # PSET 1
 # Início do pset 
-###### O início do pset1 foi da seguinte forma, comecei lendo o livro GitPro para responder as primeiras questões do pset1, que era em relação ao Git e GitHub. Logo em seguida, depois de responder as questões, fui ler o capítulo 3,1, que explicava que todo o trabalho tinha que ser em scripts e enviado ao repositório Git/Github.
-###### A partir daí, fui para a criação do repositório uvv_bd_1_cc2m, onde teria que ser público e posuísse os README, onde haveria a explicação introdutória do trabalho, o que ele contém, e como foi resolvido passo a passo.
+###### O início do pset1 foi da seguinte forma, primeiro foi a leitura do livro GitPro para responder as primeiras questões do pset1, que era em relação ao Git e GitHub. Logo em seguida, depois de responder as questões, foi a vez de ler o capítulo 3.1 do arquivo pset1, que explicava que todo o trabalho tinha que ser em scripts e enviado ao repositório Git/Github.
+###### A partir daí, foi a criação do repositório uvv_bd_1_cc2m, onde teria que ser público e presente os README, onde haveria a explicação introdutória do trabalho, o que ele contém, e como foi resolvido passo a passo.
 # PowerArchitect
 ###### Após a criação do repositório, o próximo passo foi a criação do Modelo Elmasri do Power Architect, onde foi criado toda as tabelas, a funcionario, localizacoes_departamento, departamento, projeto, trabalha_em e dependente. E, junto com a criação das tabelas, também foram criadas todos os atributos, primary key, foreign key e as unique key das suas respectivas tabelas(informações mais a fundo dos atributos está disponível no arquivo enviado pelo professor).
 ###### Logo após a implementação do projeto lógico elmasri no PowerArchitect e a conclusão das questões discussivas, chega a hora de implementar nos bancos de dados MariaDB e no PostgreSQL.
