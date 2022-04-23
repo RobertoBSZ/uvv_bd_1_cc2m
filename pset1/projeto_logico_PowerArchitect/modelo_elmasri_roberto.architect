@@ -28,7 +28,7 @@
     <column id="COL6" populated="true" UUID="91a99588-4e09-4f31-aa08-202f0956f4dd" autoIncrement="false" autoIncrementSequenceName="funcionario_data_nascimento_seq" defaultValue="" name="data_nascimento" nullable="1" physicalName="data_nascimento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks>Data de nascimento do funcionário.</remarks>
     </column>
-    <column id="COL7" populated="true" UUID="27514530-1b05-4fcb-8f55-060f7165cf73" autoIncrement="false" autoIncrementSequenceName="funcionario_endereco_seq" defaultValue="" name="endereco" nullable="1" physicalName="endereco" precision="30" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL7" populated="true" UUID="27514530-1b05-4fcb-8f55-060f7165cf73" autoIncrement="false" autoIncrementSequenceName="funcionario_endereco_seq" defaultValue="" name="endereco" nullable="1" physicalName="endereco" precision="60" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Endereço do funcionário.</remarks>
     </column>
     <column id="COL8" populated="true" UUID="ac44bba5-bd3b-4cf2-bf9c-cd4e6a59f4c3" autoIncrement="false" autoIncrementSequenceName="funcionario_sexo_seq" defaultValue="" name="sexo" nullable="1" physicalName="sexo" precision="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
@@ -37,7 +37,7 @@
     <column id="COL9" populated="true" UUID="c5c1eaf1-aacc-4206-834b-9ea8fd1c1a8b" autoIncrement="false" autoIncrementSequenceName="funcionario_salario_seq" defaultValue="" name="salario" nullable="1" physicalName="salario" precision="10" referenceCount="1" scale="2" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
      <remarks>Salário do funcionário.</remarks>
     </column>
-    <column id="COL10" populated="true" UUID="44785492-c288-4323-b12c-cf6b076d51e8" autoIncrement="false" autoIncrementSequenceName="funcionario_cpf_supervisor_seq" defaultValue="" name="cpf_supervisor" nullable="0" physicalName="cpf_supervisor" precision="11" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
+    <column id="COL10" populated="true" UUID="44785492-c288-4323-b12c-cf6b076d51e8" autoIncrement="false" autoIncrementSequenceName="funcionario_cpf_supervisor_seq" defaultValue="" name="cpf_supervisor" nullable="1" physicalName="cpf_supervisor" precision="11" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="1" userDefinedTypeUUID="67ddc63f-5541-4dd1-9236-632d9d155e80" >
      <remarks>CPF do supervisor. Será uma FK para a própria tabela (um auto-relacionamento).</remarks>
     </column>
     <column id="COL11" populated="true" UUID="0b8fb862-349b-429a-994b-1ccb6211b149" autoIncrement="false" autoIncrementSequenceName="funcionario_numero_departamento_seq" defaultValue="" name="numero_departamento" nullable="0" physicalName="numero_departamento" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -76,7 +76,7 @@
    </folder>
   </table>
   <table id="TAB20" populated="true" UUID="e729db72-116b-4ee3-a660-92e26a936f44" name="departamento" objectType="TABLE" physicalName="departamento" >
-   <remarks>Tabela que armazena as informaçoẽs dos departamentos.</remarks>
+   <remarks>Tabela que armazena as informações dos departamentos.</remarks>
    <folder id="FOLTAB201" populated="true" name="Columns" physicalName="Columns" type="1">
     <column id="COL21" populated="true" UUID="a80b99b0-20c0-4e6d-8eaf-6df375591dc7" autoIncrement="false" autoIncrementSequenceName="departamento_numero_departamento_seq" defaultValue="" name="numero_departamento" nullable="0" physicalName="numero_departamento" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Número do departamento. É a PK desta tabela.</remarks>
@@ -99,7 +99,7 @@
     <index id="IDX25" populated="true" UUID="b32ecccc-6e9d-4a43-a8a0-6764c298a0ee" clustered="false" name="departamento_pk" physicalName="departamento_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC26" populated="true" UUID="d9d1ba34-08ed-4409-8efa-76f895dc3903" ascendingOrDescending="UNSPECIFIED" column-ref="COL21" name="numero_departamento" physicalName="numero_departamento" />
     </index>
-    <index id="IDX27" populated="true" UUID="8ef5aafd-9573-47c0-8841-4a03edd47b5e" clustered="false" name="departamento_idx" physicalName="departamento_idx" primaryKeyIndex="false" unique="true" >
+    <index id="IDX27" populated="true" UUID="8ef5aafd-9573-47c0-8841-4a03edd47b5e" clustered="false" name="departamento_ak" physicalName="departamento_ak" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC28" populated="true" UUID="55e3e011-a480-46c7-8ede-a49cbda81f52" ascendingOrDescending="UNSPECIFIED" column-ref="COL22" name="nome_departamento" physicalName="nome_departamento" />
     </index>
    </folder>
@@ -128,7 +128,7 @@
     <index id="IDX34" populated="true" UUID="37983e21-1c36-425d-b1eb-2666a1aeed87" clustered="false" name="projeto_pk" physicalName="projeto_pk" primaryKeyIndex="true" unique="false" >
      <index-column id="IDC35" populated="true" UUID="098a199f-d0cf-4064-be17-6acf55a6d1e0" ascendingOrDescending="UNSPECIFIED" column-ref="COL30" name="numero_projeto" physicalName="numero_projeto" />
     </index>
-    <index id="IDX36" populated="true" UUID="4d9855a9-6146-4b43-afbd-14c2830aaf7f" clustered="false" name="projeto_idx" physicalName="projeto_idx" primaryKeyIndex="false" unique="true" >
+    <index id="IDX36" populated="true" UUID="4d9855a9-6146-4b43-afbd-14c2830aaf7f" clustered="false" name="projeto_ak" physicalName="projeto_ak" primaryKeyIndex="false" unique="true" >
      <index-column id="IDC37" populated="true" UUID="56a95bfc-692c-478f-874d-3a92303dee5f" ascendingOrDescending="UNSPECIFIED" column-ref="COL31" name="nome_projeto" physicalName="nome_projeto" />
     </index>
    </folder>
@@ -142,7 +142,7 @@
     <column id="COL40" populated="true" UUID="e69c5456-fac7-417a-a7f8-0766db6a7bc2" autoIncrement="false" autoIncrementSequenceName="trabalha_em_numero_projeto_seq" defaultValue="" name="numero_projeto" nullable="0" physicalName="numero_projeto" precision="0" primaryKeySeq="1" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Número do projeto. Faz parte da PK desta tabela e é uma FK para a tabela projeto.</remarks>
     </column>
-    <column id="COL41" populated="true" UUID="51b3744a-35b4-43f7-9def-122c3fb2808e" autoIncrement="false" autoIncrementSequenceName="trabalha_em_horas_seq" defaultValue="" name="horas" nullable="0" physicalName="horas" precision="3" referenceCount="1" scale="1" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
+    <column id="COL41" populated="true" UUID="51b3744a-35b4-43f7-9def-122c3fb2808e" autoIncrement="false" autoIncrementSequenceName="trabalha_em_horas_seq" defaultValue="" name="horas" nullable="1" physicalName="horas" precision="3" referenceCount="1" scale="1" sourceDataTypeName="UserDefinedSQLType" type="3" userDefinedTypeUUID="cc1304ea-628a-4fc5-a84a-06ba14759152" >
      <remarks>Horas trabalhadas pelo funcionário neste projeto.</remarks>
     </column>
     </folder>
@@ -188,8 +188,8 @@
    </folder>
   </table>
   <relationships>
-   <relationship id="REL54" populated="true" UUID="c16639e2-7c91-4542-8b95-db48b083e00c" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="3" identifying="false" name="funcionario_departamento_fk" physicalName="funcionario_departamento_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP55" populated="true" UUID="fb289841-3d18-4a73-92ce-f0f7f60e625b" fk-column-ref="COL23" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   <relationship id="REL54" populated="true" UUID="c16639e2-7c91-4542-8b95-db48b083e00c" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="6" identifying="false" name="funcionario_departamento_fk" physicalName="funcionario_departamento_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP55" populated="true" UUID="a867ab84-f43b-40ad-82fb-f7b486760e7f" fk-column-ref="COL23" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
    </relationship>
    <relationship id="REL56" populated="true" UUID="5d2bb9ea-94d2-49e5-a13f-6e7be9fb3e12" deferrability="7" deleteRule="3" fk-table-ref="TAB38" fkCardinality="7" identifying="true" name="funcionario_trabalha_em_fk" physicalName="funcionario_trabalha_em_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP57" populated="true" UUID="e842f6b5-8d2e-4b2b-b817-391fb42b831f" fk-column-ref="COL39" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
@@ -211,7 +211,7 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="true" target-schema="elmasri"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
  <play-pen zoom="1.0" viewportX="0" viewportY="5" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
