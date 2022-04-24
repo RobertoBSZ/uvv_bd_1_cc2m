@@ -11,7 +11,7 @@
 ###### Finalizando, foi adicionado os dados de cada tabela. Esses dados foram dados no arquivo problema do professor.
 # MariaDB
 ### Primeiro Script
-###### Finalizando o projeto, agora é hora de implementar no MariaDB. Como já houve a implementação do PostgresSQL, o MariaDB acabou sendo um "pouco" mais tranquilo. Primeiramente, os códigos foram separados em dois scripts, o primeiro era a criação do usuário 'roberto'@'localhost' com a senha '123', a criação do banco de dados 'uvv' com as seguintes características: 'SET utf8mb4 COLLATE utf8mb4_unicode_ci;'. E foi adicionado os privilégios de todas as tabelas do banco de dados uvv para o usuário roberto. E, o último código do primeiro script era o 'SYSTEM mysql -u roberto -p;', que conecta o usuário roberto ao sistema, em vez de usar o root.
+###### Finalizando o projeto, agora é hora de implementar no MariaDB. Como já houve a implementação do PostgresSQL, o MariaDB acabou sendo um "pouco" mais tranquilo. Primeiramente, os códigos foram separados em dois scripts, mariadb1 e mariadb2, o primeiro era a criação do usuário 'roberto'@'localhost' com a senha '123', a criação do banco de dados 'uvv' com as seguintes características: 'SET utf8mb4 COLLATE utf8mb4_unicode_ci;'. E foi adicionado os privilégios de todas as tabelas do banco de dados uvv para o usuário roberto. E, o último código do primeiro script era o 'SYSTEM mysql -u roberto -p;', que conecta o usuário roberto ao sistema, em vez de usar o root.
 ### Segundo Script
 ###### No segundo script foi adicionado as tabelas, os atributos, primary key, foreign key ,as unique key e os dados das suas respectivas tabelas. Os códigos foram disponibilizados pelo PowerArchitect.
 
