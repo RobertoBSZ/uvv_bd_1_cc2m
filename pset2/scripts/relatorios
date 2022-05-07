@@ -1,0 +1,120 @@
+-- 1º Questão: média salarial dos funcionários de cada departamento.
+SELECT d.nome_departamento AS departamento, CAST(AVG(f.salario) AS DECIMAL (10, 2)) AS média_salarial
+FROM funcionario AS f, departamento AS d
+WHERE (f.numero_departamento = d.numero_departamento)
+GROUP BY d.nome_departamento;
+
+-- 2º Questão: média salarial dos homens e das mulheres.
+SELECT (case when (f.sexo='M') then 'Masculino' when (f.sexo='F') then 'Feminino' end) AS sexo, CAST(AVG(salario) AS DECIMAL (10, 2)) AS média_salarial
+FROM funcionario AS f
+WHERE (sexo = 'M')
+GROUP BY f.sexo
+UNION 
+SELECT (case when (f.sexo='M') then 'Masculino' when (f.sexo='F') then 'Feminino' end) AS sexo, CAST(AVG(salario) AS DECIMAL (10, 2)) 
+FROM funcionario AS f
+WHERE (sexo = 'F')
+GROUP BY f.sexo;
+
+-- 3º Questão:um relatório que liste o nome dos departamentos e, para cada departamento, inclua as seguintes informações de seus funcionários: o nome completo, a data de nascimento, a idade em anos completos e o salário
+SELECT departamento.nome_departamento AS departamento, (funcionario.primeiro_nome||' '|| funcionario.nome_meio||' '|| funcionario.ultimo_nome) AS nome, funcionario.data_nascimento, DATE_PART('year', AGE(funcionario.data_nascimento)) AS idade, funcionario.salario
+FROM departamento 
+INNER JOIN funcionario ON (departamento.numero_departamento = funcionario.numero_departamento);
+
+--4º Questão:
+SELECT (primeiro_nome||' '|| nome_meio||' '|| ultimo_nome) AS nome, DATE_PART('year', AGE(data_nascimento))AS idade, CAST(salario AS DECIMAL (10, 2)), CAST(salario*1.2 AS DECIMAL (10,2)) AS salario_reajustado 
+FROM funcionario 
+WHERE (salario < 35000) 
+UNION 
+SELECT DISTINCT (primeiro_nome||' '|| nome_meio||' '|| ultimo_nome) AS nome, DATE_PART('year', AGE(data_nascimento)) AS idade, CAST(salario AS DECIMAL (10, 2)), CAST(salario*1.15 AS DECIMAL (10, 2)) AS salario_reajustado 
+FROM funcionario 
+WHERE (salario >= 35000);
+
+--5º Questão:
+SELECT d.nome_departamento as departamento, (f.primeiro_nome||' '|| f.nome_meio||' '|| f.ultimo_nome) AS nome, f.salario, (CASE WHEN(d.numero_departamento = f.numero_departamento AND d.cpf_gerente=f.cpf) THEN '*' END) AS gerente
+FROM funcionario AS f, departamento AS d 
+WHERE (d.numero_departamento = f.numero_departamento)
+ORDER BY d.nome_departamento ASC, f.salario DESC;
+
+
+--6º Questão:
+SELECT (f.primeiro_nome||' '|| f.nome_meio||' '|| f.ultimo_nome) AS nomefunc, d.nome_departamento as departamentos, dp.nome_dependente, (CASE WHEN(dp.sexo = 'M')THEN 'Masculino' WHEN(dp.sexo = 'F')THEN 'Feminino'END) AS sexo, DATE_PART('year', AGE(dp.data_nascimento)) AS idade
+FROM funcionario AS f, dependente AS dp, departamento AS d
+WHERE (f.cpf = dp.cpf_funcionario AND f.numero_departamento = d.numero_departamento);
+-- ==============
+--7º Questão:
+SELECT (f.primeiro_nome||' '|| f.nome_meio||' '|| f.ultimo_nome) AS nome, d.nome_departamento AS departamento, f.salario
+FROM funcionario AS f, departamento AS d
+WHERE f.cpf NOT IN (SELECT d.cpf_funcionario FROM dependente AS d) AND (d.numero_departamento= f.numero_departamento);
+
+--8º Questão:
+SELECT d.nome_departamento AS departamento, p.nome_projeto as projeto, (f.primeiro_nome||' '|| f.nome_meio||' ' ||f.ultimo_nome) AS nome, t.horas
+FROM funcionario AS f
+INNER JOIN trabalha_em AS t
+ON (f.cpf = t.cpf_funcionario)
+INNER JOIN projeto AS p
+ON (t.numero_projeto = p.numero_projeto)
+INNER JOIN departamento AS d
+ON (p.numero_departamento = d.numero_departamento)
+ORDER BY d.nome_departamento ASC, p.nome_projeto ASC;
+
+--9º Questão
+SELECT d.nome_departamento AS departamento, p.nome_projeto AS projeto, SUM(t.horas) AS total_horas
+FROM funcionario AS f
+INNER JOIN trabalha_em AS t
+ON (f.cpf = t.cpf_funcionario)
+INNER JOIN projeto AS p
+ON (t.numero_projeto = p.numero_projeto)
+INNER JOIN departamento AS d
+ON (P.numero_departamento = d.numero_departamento)
+GROUP BY d.nome_departamento, p.nome_projeto
+ORDER BY d.nome_departamento;
+
+--10º Questão
+SELECT d.nome_departamento AS departamento, CAST(AVG(f.salario) AS DECIMAL (10, 2)) AS média_salarial
+FROM funcionario AS f, departamento AS d
+WHERE (f.numero_departamento = d.numero_departamento)
+GROUP BY d.nome_departamento;
+
+--11º Questão
+SELECT (f.primeiro_nome||' '|| f.nome_meio||' '|| f.ultimo_nome) AS nome, p.nome_projeto AS projeto, CAST (t.horas * 50 AS DECIMAL(10,0)) AS total_horas
+FROM funcionario AS f
+INNER JOIN trabalha_em AS t
+ON (f.cpf = t.cpf_funcionario)
+INNER JOIN projeto AS p
+ON (t.numero_projeto = p.numero_projeto);
+
+--12º Questão
+SELECT d.nome_departamento AS departamento, p.nome_projeto AS projeto, (f.primeiro_nome||' '|| f.nome_meio||' '|| f.ultimo_nome) AS nome
+FROM funcionario AS f
+INNER JOIN departamento AS d
+ON f.numero_departamento = d.numero_departamento
+INNER JOIN trabalha_em AS t
+ON f.cpf = t.cpf_funcionario
+INNER JOIN projeto AS p
+ON t.numero_projeto = p.numero_projeto
+WHERE t.horas IS NULL;
+
+--13º Questão
+SELECT (f.primeiro_nome||' '|| f.nome_meio||' '|| f.ultimo_nome) AS nome_funcionario, (case when (f.sexo='M') then 'Masculino' when (f.sexo='F') then 'Feminino'end) as sexo, DATE_PART('year', AGE(f.data_nascimento)) AS idade_funcionario, (d.nome_dependente) AS nome_dependente, (case when (d.sexo='M') then 'Masculino' when (d.sexo='F') then 'Feminino'end) as sexo_dependente, DATE_PART('year', AGE(d.data_nascimento)) AS idade_dependente
+FROM funcionario AS f
+INNER JOIN dependente AS d
+ON (f.cpf = d.cpf_funcionario)
+ORDER BY idade_funcionario DESC, idade_dependente DESC;
+
+--14º Questão
+SELECT d.nome_departamento AS departamento, COUNT(f.cpf) AS quantidade_funcionarios
+FROM funcionario AS f
+INNER JOIN departamento AS d
+ON (f.numero_departamento = d.numero_departamento)
+GROUP BY d.nome_departamento;
+
+--15º Questão
+SELECT (f.primeiro_nome||' '|| f.nome_meio||' '|| f.ultimo_nome) AS nome, d.nome_departamento AS departamento, p.nome_projeto AS projeto
+FROM funcionario AS f
+INNER JOIN trabalha_em AS t
+ON f.cpf = t.cpf_funcionario
+INNER JOIN projeto AS p
+ON t.numero_projeto = p.numero_projeto
+INNER JOIN departamento AS d
+ON f.numero_departamento = d.numero_departamento
+ORDER BY nome;
