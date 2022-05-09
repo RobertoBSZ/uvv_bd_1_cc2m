@@ -6,4 +6,4 @@
 - Script do MariaDB;
 - Script do Postgres;
 #### Pset2:
-- script com os relatórios pedidos na folha do pset2;
+- Script com os relatórios pedidos na folha do pset2;
