@@ -1,3 +1,6 @@
+DROP DATABASE IF EXISTS uvv;
+DROP USER IF EXISTS roberto;
+
 /* Criando o usuário roberto para usar o banco de dados UVV*/
 CREATE USER roberto WITH
 CREATEDB
