@@ -16,13 +16,16 @@ LC_CTYPE 'pt_BR.UTF-8'
 ALLOW_CONNECTIONS true;
 
 /* Conectando com o banco de dados UVV com o usuário roberto, com a senha '123'*/
-\connect uvv roberto;
+\connect "dbname=uvv user=roberto password=123";
 
 /* Criando o esquema elmasri e autorizando o usuário roberto*/
 CREATE SCHEMA elmasri AUTHORIZATION roberto;
 
 /* Tornando o esquema elmasi padrão */
-SET SEARCH_PATH TO elmasri, roberto, public;
+ALTER USER roberto
+SET SEARCH_PATH TO elmasri, "$user", public;
+
+SET SEARCH_PATH TO elmasri, "$user", public;
 
 /*Criando as tabelas do projeto elmasri*/
 
