@@ -22,7 +22,7 @@
 ------------
 ### Questão 3:
 ###### Um relatório que mostra o nome dos departamentos e as seguintes informações dos seus respectivos funcionários: o nome completo, a data de nascimento, a idade em anos completos e o salário.
-|departamento  |       nome       | data_nascimento | idade | salario |  
+|departamento  |       nome       | data_nascimento | idade | salario |
 |---|---|
 |Matriz        | Jorge E Brito    | 1937-11-10      |    84 | 55000.00
 |Pesquisa      | Fernando T Wong  | 1955-12-08      |    66 | 40000.00
@@ -73,7 +73,7 @@
 ------------
 ### Questão 7
 ###### Um relatório que mostra o nome completo dos funcionários que NÃO POSSUEM dependentes, os departamentos onde trabalham e seu salário.
- |nome       | departamento  | salario  
+ |nome       | departamento  | salario
 |---|---|
  |Jorge E Brito   | Matriz        | 55000.00
  |André V Pereira | Administração | 25000.00
@@ -144,7 +144,7 @@
 ------------
 ### Questão 12:
 ###### Um relatório que mostra o nome do departamento, o nome do projeto, e o nome do funcionário que, mesmo estando em um projeto, não tem nenhuma hora trabalhada registrada.
- |departamento |    projeto    |     nome      
+ |departamento |    projeto    |     nome
 |---|---|
  |Matriz       | Reorganização | Jorge E Brito
 ------------
@@ -178,7 +178,7 @@
 ------------
 ### Questão 15:
 ###### Um relatório que mostra o nome completo do funcionário, o departamento do mesmo, e o nome dos projetos que cada funcionário está alocado(OBS: Se houver algum funcionário que não está alocado em nenhum projeto, o nome completo e o departamento também aparecem no relatório).
-|       nome       | departamento  |     projeto     
+|       nome       | departamento  |     projeto
 |---|---|
 |Alice J Zelaya   | Administração | Informatização
  |Alice J Zelaya   | Administração | Novosbenefícios
