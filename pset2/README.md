@@ -1,6 +1,6 @@
 # PSET 2
 ## Início do pset 2
-###### Este repositório apresenta todos os SELECT's das 15 questões presentes no pset 2, formando os relatórios exigidos em cada questão. Essa resolução foi feita com base nas consultas feitas no Livro de Sistemas De Banco De Dados by Ramez Elmasri, Shamkant B. Navathe e através de pesquisas na internet.
+###### Este repositório apresenta todos os SELECT's das 15 questões presentes no pset 2, formando os relatórios exigidos em cada questão. Essa resolução foi feita com base nas consultas feitas no Livro de Sistemas De Banco De Dados by Ramez Elmasri, Shamkant B. Navathe e através de pesquisas na internet. OBS: Para executar esse script, é necessário executar o pset1 para a criação do banco de dados, do usuário e das tabelas e a inserção dos dados.
 ------------
 ## Saídas de cada questão
 ###### Abaixo está todos os relatórios de cada questão presentes no script.
